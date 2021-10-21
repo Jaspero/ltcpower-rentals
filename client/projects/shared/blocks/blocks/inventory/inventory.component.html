@@ -36,7 +36,7 @@
           </div>
           <a class="col-4 col-s-6 col-xs-12" *ngFor="let model of models$ | async; trackBy:track" [routerLink]="['/product', model.id]" [class.model-col]="!data.categories">
             <div class="model-card flex fd-col ai-start jc-center">
-              <div class="model-bg" [ngStyle]="{'background-image': 'url('+ model.featured +')'}"></div>
+              <div class="model-bg" [style]="model.style"></div>
               <div class="text-wrapper">
                 <h1 class="model-title  m-t-s">{{model.title}}</h1>
                 <p class="m-y-s">{{model.excerpt}}</p>

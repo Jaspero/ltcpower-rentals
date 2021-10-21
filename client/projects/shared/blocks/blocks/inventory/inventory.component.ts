@@ -8,7 +8,7 @@ import {Model} from '@shared/interfaces/model.interface';
 import {Product} from '@shared/interfaces/product.interface';
 import {Subcategories} from '@shared/interfaces/subcategories.interface';
 import {BehaviorSubject, Observable} from 'rxjs';
-import {filter, map, scan, startWith, switchMap} from 'rxjs/operators';
+import {filter, map, scan, startWith, switchMap, tap} from 'rxjs/operators';
 import {CommonBlockComponent, CommonOptions} from '../common.block';
 
 interface InventoryOptions extends CommonOptions {
@@ -114,10 +114,16 @@ export class InventoryComponent extends CommonBlockComponent implements OnInit {
             .get()
         ),
         map(data =>
-          data.docs.map(it => ({
-            id: it.id,
-            ...it.data() as Model
-          }))
+          data.docs.map(it => {
+
+            const dt = it.data() as Model;
+
+            return {
+              id: it.id,
+              style: `background-image:url("${dt.featured}")`,
+              ...dt
+            };
+          })
         )
       );
 

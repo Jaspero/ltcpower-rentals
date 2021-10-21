@@ -27,6 +27,33 @@
   }
 }
 
+.social {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+
+  a {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    background: #e5e5e5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+    transition: .2s;
+
+    &:hover {
+      box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.55);
+    }
+  }
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
 
 /* Mobile styles
  *============================================================================*/
@@ -41,5 +68,13 @@
 @media (max-width: 600px) {
   .question, .answer {
     font-size: 14px;
+  }
+
+  .social {
+    flex-direction: column;
+
+    a {
+      margin-top: 1rem;
+    }
   }
 }

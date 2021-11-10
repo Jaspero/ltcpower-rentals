@@ -16,7 +16,8 @@ export const BACKGROUND_HERO_BLOCK = {
         fields: [
           '/title',
           '/subtitle',
-          '/image'
+          '/image',
+          '/mobileImage'
         ],
       },
       ...COMMON_OPTIONS.segment
@@ -26,18 +27,15 @@ export const BACKGROUND_HERO_BLOCK = {
         title: {type: 'string'},
         subtitle: {type: 'string'},
         image: {type: 'string'},
+        mobileImage: {type: 'string'},
         ...COMMON_OPTIONS.properties
       }
     },
     definitions: {
       title: {label: 'Title'},
       subtitle: { label: 'Subtitle',},
-      image: {
-        label: 'Background',
-        component: {
-          type: 'image'
-        }
-      },
+      image: {label: 'Background', component: {type: 'image'}},
+      mobileImage: {label: 'Mobile Background', component: {type: 'image'}},
       ...COMMON_OPTIONS.definitions
     }
   }

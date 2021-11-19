@@ -20,6 +20,8 @@
 
   @media (max-width: 500px) {
     background-position: center;
+    background-size: contain;
+    min-height: 210px;
   }
 }
 
